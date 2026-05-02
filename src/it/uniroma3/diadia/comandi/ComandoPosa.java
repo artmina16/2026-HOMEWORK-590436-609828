@@ -1,13 +1,13 @@
 package it.uniroma3.diadia.comandi;
 
 import it.uniroma3.attrezzi.Attrezzo;
-import it.uniroma3.diadia.IOConsole;
+import it.uniroma3.diadia.IO;
 import it.uniroma3.diadia.Partita;
 
 public class ComandoPosa implements Comando {
 	private String nomeAttrezzo;
 	@Override
-	public void esegui(Partita partita, IOConsole io) {
+	public void esegui(Partita partita, IO io) {
 		// TODO Auto-generated method stub
 		if(this.nomeAttrezzo==null) {
 			io.mostraMessaggio("Quale attrezzo vuoi posare ?");
