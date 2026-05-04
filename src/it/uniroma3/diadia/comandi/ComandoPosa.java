@@ -8,7 +8,6 @@ public class ComandoPosa implements Comando {
 	private String nomeAttrezzo;
 	@Override
 	public void esegui(Partita partita, IO io) {
-		// TODO Auto-generated method stub
 		if(this.nomeAttrezzo==null) {
 			io.mostraMessaggio("Quale attrezzo vuoi posare ?");
 			return;
@@ -27,23 +26,16 @@ public class ComandoPosa implements Comando {
 
 	@Override
 	public void setParametro(String parametro) {
-		// TODO Auto-generated method stub
 		this.nomeAttrezzo = parametro;
-
 	}
 
 	@Override
 	public String getNome() {
-		// TODO Auto-generated method stub
-		return "posa";
-		
+		return "posa";		
 	}
 
 	@Override
 	public String getParametro() {
-		// TODO Auto-generated method stub
-		return this.nomeAttrezzo;
-		
+		return this.nomeAttrezzo;		
 	}
-
 }

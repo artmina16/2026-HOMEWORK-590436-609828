@@ -26,7 +26,9 @@ public class Partita {
 		this.finita = false;
 	}
 	
-	
+	public Labirinto getLabirinto() {
+		return this.labirinto;
+	}
 	
 	public Giocatore getGiocatore() {
 		return this.giocatore;
@@ -63,8 +65,6 @@ public class Partita {
 	public void setFinita() {
 		this.finita = true;
 	}
-
-
 
 	public boolean giocatoreIsVivo() {
 		// TODO Auto-generated method stub

@@ -7,8 +7,7 @@ import org.junit.jupiter.api.Test;
 import it.uniroma3.ambienti.Stanza;
 
 public class PartitaTest {
-	private Partita partita = new Partita();
-		
+	private Partita partita = new Partita();		
 	
 	@Test
 	public void testIsFinitaCfuZero() {
@@ -18,7 +17,7 @@ public class PartitaTest {
 	
 	@Test
 	public void testIsFinitaStanzaVincenteTrovata() {
-		Stanza biblioteca = this.partita.getStanzaVincente();
+		Stanza biblioteca = this.partita.getLabirinto().getStanzaVincente();
 		this.partita.setStanzaCorrente(biblioteca);
 		assertTrue(this.partita.isFinita());
 	}
