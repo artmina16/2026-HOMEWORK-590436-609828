@@ -1,25 +1,26 @@
 package it.uniroma3.diadia;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class IOSimulator implements IO {
 
-    private String[] righeDaLeggere;
-    private String[] messaggiMostrati;
+    private List<String> righeDaLeggere;
+    private List<String> messaggiMostrati;
 
     private int indiceLettura;
-    private int indiceMessaggi;
 
-    public IOSimulator(String[] righeDaLeggere) {
+    public IOSimulator(List<String> righeDaLeggere) {
         this.righeDaLeggere = righeDaLeggere;
-        this.messaggiMostrati = new String[100];
+        this.messaggiMostrati = new ArrayList<>();
 
         this.indiceLettura = 0;
-        this.indiceMessaggi = 0;
     }
 
     @Override
     public String leggiRiga() {
-        if (this.indiceLettura < this.righeDaLeggere.length) {
-            String riga = this.righeDaLeggere[this.indiceLettura];
+        if (this.indiceLettura < this.righeDaLeggere.size()) {
+            String riga = this.righeDaLeggere.get(indiceLettura);
             this.indiceLettura++;
             return riga;
         }
@@ -28,21 +29,19 @@ public class IOSimulator implements IO {
 
     @Override
     public void mostraMessaggio(String messaggio) {
-        if (this.indiceMessaggi < this.messaggiMostrati.length) {
-            this.messaggiMostrati[this.indiceMessaggi] = messaggio;
-            this.indiceMessaggi++;
-        }
+        this.messaggiMostrati.add(messaggio);
+        
     }
 
-    public String[] getMessaggiMostrati() {
+    public List<String> getMessaggiMostrati() {
         return this.messaggiMostrati;
     }
 
     public String getMessaggioMostrato(int indice) {
-        return this.messaggiMostrati[indice];
+        return this.messaggiMostrati.get(indice);
     }
 
     public int getNumeroMessaggiMostrati() {
-        return this.indiceMessaggi;
+        return this.messaggiMostrati.size();
     }
 }

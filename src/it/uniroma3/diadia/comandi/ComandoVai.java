@@ -4,7 +4,7 @@ import it.uniroma3.ambienti.Stanza;
 import it.uniroma3.diadia.IO;
 import it.uniroma3.diadia.Partita;
 
-public class ComandoVai implements Comando {
+public class ComandoVai extends AbstractComando {
 	private String direzione;
 
 	/**
